@@ -1,9 +1,10 @@
-var myApp = angular.module('myApp', ['ngMessages']);
+var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 
-myApp.controller('mainController', function($log, $scope, $filter) {
+myApp.controller('mainController', function($log, $scope, $filter, $resource) {
 
     console.log($scope);
     console.log($log);
+    console.log($resource);
 
     $log.log('Hello.');
     $log.info('This is some information');
@@ -16,6 +17,6 @@ myApp.controller('mainController', function($log, $scope, $filter) {
 
     $log.log($scope.formattedname);
 
-    
+
 
 });
