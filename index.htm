@@ -60,10 +60,15 @@
                 <hr/>
                 <h1>twitter.com/{{ lowercasehandle() }}</h1>
 
-
-            <div class="alert" ng-show="handle.length !== characters">
-
-                Must be 5 characters 
+<!-- first property - class, second one - expression that determines whether class property should be added -->
+            <div class="alert" ng-class="{ 'alert-warning': handle.length < characters, 'alert-danger': handle.length > characters}" ng-show="handle.length !== characters">
+                <div ng-show="handle.length < characters">
+                    You have less than 5 characters
+                </div>
+                <div ng-show="handle.length > characters">
+                    You have more than 5 characters
+                        
+                </div>
 
             </div>
 
