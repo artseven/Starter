@@ -1,3 +1,5 @@
+
+
 var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 
 // myApp.controller('mainController', function($log, $scope, $filter, $resource) {
@@ -27,6 +29,11 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
         return $filter('lowercase')($scope.handle);
     }
 
+    var tb = document.getElementById("name");
+    tb.addEventListener("keypress", function(event) {
+        console.log("Pressed!");
+    })
+    console.log(tb);
 
 
 }]);
