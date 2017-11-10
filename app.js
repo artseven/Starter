@@ -54,6 +54,22 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
     }, 3000);
 
     $scope.characters = 5;
+    $scope.rules = [
+        {
+            rulename: 'Must be 5 characters'
+        },
+        {   
+            rulename: 'Must not be used elsewhere'
+        },
+        {
+            rulename: 'Must be cool'
+        }
+        
+    ];
+    console.log($scope.rules);
 
+    $scope.alertClick = function() {
+        alert('Clicked!');
+    }
 
 }]);
