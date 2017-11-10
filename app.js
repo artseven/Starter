@@ -13,7 +13,7 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
     $log.debug('Some debug information');
     $log.error('This was an error!');
 
-    $scope.name = 'John';
+    $scope.name = 'Tony';
     $scope.formattedname = $filter('uppercase')($scope.name)
 
     $log.log($scope.formattedname);
