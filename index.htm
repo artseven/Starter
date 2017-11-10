@@ -36,7 +36,6 @@
 			</nav>
 		</header>
 
-        <div class="container">
 
             <div ng-controller="mainController">
             
@@ -60,6 +59,12 @@
                 
                 <hr/>
                 <h1>twitter.com/{{ lowercasehandle() }}</h1>
+
+
+            <div class="alert" ng-if="handle.length !== characters">
+
+                Must be 5 characters 
+
             </div>
 
             <div class="container">
@@ -69,8 +74,8 @@
                     </div>
                 </div>
             </div>
-            
-		</div>
+        </div>      
+		
 
     </body>
 </html>

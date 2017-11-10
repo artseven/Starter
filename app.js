@@ -48,9 +48,12 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
         $scope.$apply(function() {
             $scope.handle = 'newtwitterhandle';
             console.log('Scope changed!');
+
         })
 
-    }, 3000)
+    }, 3000);
+
+    $scope.characters = 5;
 
 
 }]);
