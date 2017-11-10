@@ -35,5 +35,22 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
     })
     console.log(tb);
 
+    $scope.$watch('handle', function(newValue, oldValue) {
+
+        console.info('Changed!');
+        console.log('Old: ' + oldValue);
+        console.log('New: ' + newValue);
+
+    })
+
+    setTimeout(function() {
+        // applies $digest cycle so AngularJS know about changes and re-renders DOM
+        $scope.$apply(function() {
+            $scope.handle = 'newtwitterhandle';
+            console.log('Scope changed!');
+        })
+
+    }, 3000)
+
 
 }]);
