@@ -22,6 +22,8 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 
     $log.log($scope.formattedname);
 
+    $scope.handle = '';
+
 
 
 }]);
