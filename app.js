@@ -3,7 +3,15 @@
 var myApp = angular.module('myApp', ['ngMessages', 'ngResource', 'ngRoute']);
 
     myApp.config(function ($routeProvider) {
-        
+
+        $routeProvider
+        .when('/', {
+            templateUrl: 'pages/main.html',
+            controller: 'mainController'
+        })
+        .when('/second', {
+            
+        })
     });
 // myApp.controller('mainController', function($log, $scope, $filter, $resource) {
    myApp.controller('mainController', 
