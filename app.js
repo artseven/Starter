@@ -4,8 +4,8 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 
 // myApp.controller('mainController', function($log, $scope, $filter, $resource) {
    myApp.controller('mainController', 
-            ['$scope','$log','$filter','$resource','$timeout', '$http',
-    function ($scope, $log, $filter, $resource, $timeout, $http) {
+            ['$scope','$log','$filter','$resource','$timeout', '$http', '$location', 
+    function ($scope, $log, $filter, $resource, $timeout, $http, $location ) {
         
     console.log($scope);
     console.log($log);
@@ -81,6 +81,8 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
     //     .error(function (data, status) {
     //         console.log(data);
     //     });
+
+    $log.info($location.path());
     
 
 }]);
@@ -88,4 +90,6 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 myApp.controller('secondController', ['$scope', function($scope) {
 
     $scope.name = 'Second';
+
+
 }]);
