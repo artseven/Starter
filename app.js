@@ -74,11 +74,18 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
         alert('Clicked!');
     }
 
-    $http.get('/api')
-        .success(function (result) {
-            $scope.rules = result;
-        })
-        .error(function (data, status) {
-            console.log(data);
-        })
+    // $http.get('/api')
+    //     .success(function (result) {
+    //         $scope.rules = result;
+    //     })
+    //     .error(function (data, status) {
+    //         console.log(data);
+    //     });
+    
+
+}]);
+
+myApp.controller('secondController', ['$scope', function($scope) {
+
+    $scope.name = 'Second';
 }]);
