@@ -3,7 +3,9 @@
 var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 
 // myApp.controller('mainController', function($log, $scope, $filter, $resource) {
-   myApp.controller('mainController', ['$scope', '$log','$filter','$resource', '$timeout', function($scope, $log, $filter, $resource, $timeout) {
+   myApp.controller('mainController', 
+            ['$scope', '$log','$filter','$resource','$timeout', '$http',
+    function($scope, $log, $filter, $resource, $timeout, $http) {
         
     console.log($scope);
     console.log($log);
