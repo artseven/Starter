@@ -1,7 +1,10 @@
 
 
-var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
+var myApp = angular.module('myApp', ['ngMessages', 'ngResource', 'ngRoute']);
 
+    myApp.config(function ($routeProvider) {
+        
+    });
 // myApp.controller('mainController', function($log, $scope, $filter, $resource) {
    myApp.controller('mainController', 
             ['$scope','$log','$filter','$resource','$timeout', '$http', '$location', 
@@ -18,7 +21,7 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
     $log.error('This was an error!');
 
     $scope.name = 'Tony';
-    $scope.formattedname = $filter('uppercase')($scope.name)
+    $scope.formattedname = $filter('uppercase')($scope.name);
 
     $timeout(function() {
         $scope.name = 'Everybody';
@@ -29,12 +32,12 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
     $scope.handle = '';
     $scope.lowercasehandle = function() {
         return $filter('lowercase')($scope.handle);
-    }
+    };
 
     var tb = document.getElementById("name");
     tb.addEventListener("keypress", function(event) {
         console.log("Pressed!");
-    })
+    });
     console.log(tb);
 
     $scope.$watch('handle', function(newValue, oldValue) {
@@ -43,7 +46,7 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
         console.log('Old: ' + oldValue);
         console.log('New: ' + newValue);
 
-    })
+    });
 
     setTimeout(function() {
         // applies $digest cycle so AngularJS know about changes and re-renders DOM
@@ -51,7 +54,7 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
             $scope.handle = 'newtwitterhandle';
             console.log('Scope changed!');
 
-        })
+        });
 
     }, 3000);
 
@@ -72,7 +75,7 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 
     $scope.alertClick = function() {
         alert('Clicked!');
-    }
+    };
 
     // $http.get('/api')
     //     .success(function (result) {
