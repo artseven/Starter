@@ -9,9 +9,10 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource', 'ngRoute']);
             templateUrl: 'pages/main.html',
             controller: 'mainController'
         })
-        .when('/second', {
-            
-        })
+        .when('/second/:num', {
+            templateUrl: 'pages/second.html',
+            controller: 'secondController'
+        });
     });
 // myApp.controller('mainController', function($log, $scope, $filter, $resource) {
    myApp.controller('mainController', 
@@ -98,9 +99,11 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource', 'ngRoute']);
 
 }]);
 
-myApp.controller('secondController', ['$scope', function($scope) {
+myApp.controller('secondController', [
+             '$scope', '$routeParams',
+     function($scope, $routeParams) {
 
-    $scope.name = 'Second';
+    $scope.num = 'Second';
 
 
 }]);

@@ -32,6 +32,9 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+					<li><a href="#/second"><i></i> Second</a></li>
 				</ul>
 			</div>
 			</nav>
@@ -92,10 +95,7 @@
             <div ng-cloak>{{ name }}</div>
         </div>      
 
-
-		<div ng-controller="secondController">
-            <h1>{{ name }}</h1>
-        </div>
+        <div ng-view></div>
 
     </body>
 </html>
