@@ -4,8 +4,8 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 
 // myApp.controller('mainController', function($log, $scope, $filter, $resource) {
    myApp.controller('mainController', 
-            ['$scope', '$log','$filter','$resource','$timeout', '$http',
-    function($scope, $log, $filter, $resource, $timeout, $http) {
+            ['$scope','$log','$filter','$resource','$timeout', '$http',
+    function ($scope, $log, $filter, $resource, $timeout, $http) {
         
     console.log($scope);
     console.log($log);
@@ -74,4 +74,11 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
         alert('Clicked!');
     }
 
+    $http.get('/api')
+        .success(function (result) {
+            $scope.rules = result;
+        })
+        .error(function (data, status) {
+            console.log(data);
+        })
 }]);
