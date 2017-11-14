@@ -99,6 +99,15 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource', 'ngRoute']);
 
 }]);
 
+myApp.service('nameService', function(){
+    
+    var self = this;
+    this.name = 'John Doe';
+
+    this.nameLength = function() {
+        return self.name.length;
+    };
+});
 myApp.controller('secondController', [
              '$scope', '$routeParams',
      function($scope, $routeParams) {
