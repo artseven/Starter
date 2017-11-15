@@ -2,26 +2,27 @@
 
 var myApp = angular.module('myApp', ['ngMessages', 'ngResource', 'ngRoute']);
 
-    myApp.config(function ($routeProvider) {
-
+    myApp.config(function ($routeProvider, $locationProvider) {
+        //best practice
         $routeProvider
         .when('/', {
             templateUrl: 'pages/main.html',
             controller: 'mainController'
         })
-        .when('/second/:num', {
+        .when('/second', {
             templateUrl: 'pages/second.html',
             controller: 'secondController'
         });
     });
 // myApp.controller('mainController', function($log, $scope, $filter, $resource) {
    myApp.controller('mainController', 
-            ['$scope','$log','$filter','$resource','$timeout', '$http', '$location', 
-    function ($scope, $log, $filter, $resource, $timeout, $http, $location ) {
+            ['$scope','$log','$filter','$resource','$timeout', '$http', '$location', 'nameService',
+    function ($scope, $log, $filter, $resource, $timeout, $http, $location, nameService ) {
+    
         
-    console.log($scope);
-    console.log($log);
-    console.log($resource);
+    // console.log($scope);
+    // console.log($log);
+    // console.log($resource);
 
     $log.log('Hello.');
     $log.info('This is some information');
@@ -33,7 +34,6 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource', 'ngRoute']);
     $scope.formattedname = $filter('uppercase')($scope.name);
 
     $timeout(function() {
-        $scope.name = 'Everybody';
     }, 3000);
 
     $log.log($scope.formattedname);
@@ -95,7 +95,15 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource', 'ngRoute']);
     //     });
 
     $log.info($location.path());
-    
+
+    $scope.name = nameService.name;
+    // manual watch to detect changes to service variable
+    $scope.$watch('name', function() {
+        nameService.name = $scope.name;
+    });
+    $log.log(nameService.name);
+    $log.log(nameService.nameLength());
+
 
 }]);
 
@@ -107,12 +115,17 @@ myApp.service('nameService', function(){
     this.nameLength = function() {
         return self.name.length;
     };
+
+
 });
 myApp.controller('secondController', [
-             '$scope', '$routeParams',
-     function($scope, $routeParams) {
+            '$scope','$routeParams','nameService','$log',
+    function($scope, $routeParams, nameService, $log) {
 
-    $scope.num = 'Second';
+    $scope.name = nameService.name;
+        
+    $scope.num = $routeParams.num || 1;
+    
 
 
 }]);

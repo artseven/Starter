@@ -34,7 +34,7 @@
 					<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-					<li><a href="#/second"><i></i> Second</a></li>
+					<li><a href="#!/second"><i></i> Second</a></li>
 				</ul>
 			</div>
 			</nav>
@@ -93,9 +93,8 @@
             <input type="button" value="Click me" ng-click="alertClick()"/>
 
             <div ng-cloak>{{ name }}</div>
+            <div ng-view></div>
+            
         </div>      
-
-        <div ng-view></div>
-
     </body>
 </html>
