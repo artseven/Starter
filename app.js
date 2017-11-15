@@ -181,6 +181,7 @@ myApp.directive("searchResults", function() {
             // & is for function
             formattedAddressFunction: "&" 
         },
+        transclude: true
         // compile: function(elem, attrs) {
 
         //     console.log('Compiling...');
@@ -200,11 +201,11 @@ myApp.directive("searchResults", function() {
         //         }
         //     };
         // },
-        link: function(scope, elements, attrs) {
-                    console.log('Post-linking...');
-                    console.log(scope);
-                    console.log(elements);
-        }
+        // link: function(scope, elements, attrs) {
+        //             console.log('Post-linking...');
+        //             console.log(scope);
+        //             console.log(elements);
+        // }
                 
     };
 });
