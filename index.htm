@@ -6,11 +6,14 @@
         <meta charset="UTF-8">
 
         <!-- load bootstrap and fontawesome via CDN -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+         crossorigin="anonymous">
         <style>
             html, body, input, select, textarea
             {
                 font-size: 1.05em;
+                padding: 10px;
             }
         </style>
         
@@ -42,19 +45,9 @@
 
 
             <div ng-controller="mainController">
-                <h1>{{ name }}</h1>
+                <!-- <h1>{{ name }}</h1>
                 <h1>Hello {{ name + '. How are you?' }}</h1>
-                <!-- <form name="myForm">
-                       <label>
-                            Enter text:
-                            <input type="text" ng-model="field" name="myField" required maxlength="15" />
-                        </label>
-                        <div ng-messages="myForm.myField.$error" role="alert">
-                         <div ng-message="required">Please enter a value for this field.</div>
-                         <div ng-message="text">This field must be a valid email address.</div>
-                         <div ng-message="maxlength">This field can be at most 15 characters long.</div>
-                        </div>
-                </form> -->
+
 
                 <div>
                     <label for="">What is your twitter handle?</label>
@@ -62,7 +55,7 @@
                 </div>
                 
                 <hr/>
-                <h1>twitter.com/{{ lowercasehandle() }}</h1>
+                <h1>twitter.com/{{ lowercasehandle() }}</h1> -->
 
 <!-- first property - class, second one - expression that determines whether class property should be added -->
             <div class="alert" ng-class="{ 'alert-warning': handle.length < characters, 'alert-danger': handle.length > characters}" ng-show="handle.length !== characters">

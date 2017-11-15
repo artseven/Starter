@@ -118,6 +118,7 @@ myApp.service('nameService', function(){
 
 
 });
+
 myApp.controller('secondController', [
             '$scope','$routeParams','nameService','$log',
     function($scope, $routeParams, nameService, $log) {
@@ -129,3 +130,9 @@ myApp.controller('secondController', [
 
 
 }]);
+
+myApp.directive("searchResults", function() {
+    return {
+        template: '<a href="#" class="list-group-item"><h4 class="list-group-item-heading">Doe, John</h4><p class="list-group-item-text">555 Main St., New York, NY 11111</p></a>'
+    };
+});
