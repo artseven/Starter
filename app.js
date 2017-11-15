@@ -104,9 +104,32 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource', 'ngRoute']);
     $log.log(nameService.name);
     $log.log(nameService.nameLength());
 
-    $scope.person = {
-        name: 'John Doe',
-        address: '555 Main St., New York, NY 11111'
+    $scope.people = [
+        {
+            name: 'John Doe',
+            address: '555 Main St.',
+            city: 'New York',
+            state: 'NY',
+            zip: '11111'
+        },
+        {
+            name: 'Jane Doe',
+            address: '333 Second St.',
+            city: 'Buffalo',
+            state: 'NY',
+            zip: '22222'
+        },
+        {
+            name: 'George Doe',
+            address: '111 Third St.',
+            city: 'Miami',
+            state: 'FL',
+            zip: '33130'
+        }
+    ];
+
+    $scope.formattedAddress = function(person) {
+        return person.address + ', ' + person.city + ', ' + person.state + ' ' + person.zip;
     };
 
 
@@ -154,7 +177,9 @@ myApp.directive("searchResults", function() {
             personObject: "=",
             // @ sign is for text
             personName: "@",
-            personAddress: "@" 
+            personAddress: "@",
+            // & is for function
+            formattedAddressFunction: "&" 
         }
     };
 });
