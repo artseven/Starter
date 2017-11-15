@@ -104,6 +104,11 @@ var myApp = angular.module('myApp', ['ngMessages', 'ngResource', 'ngRoute']);
     $log.log(nameService.name);
     $log.log(nameService.nameLength());
 
+    $scope.person = {
+        name: 'John Doe',
+        address: '555 Main St., New York, NY 11111'
+    };
+
 
 }]);
 
@@ -142,6 +147,14 @@ myApp.directive("searchResults", function() {
         templateUrl: 'directives/searchresults.html',
         // to delete <search-results></search-results> from DOM
         // and insert just a template
-        replace: true
+        replace: true,
+        // isolate the scope from page model
+        scope: {
+            // = is two way binding allowing passing an object
+            personObject: "=",
+            // @ sign is for text
+            personName: "@",
+            personAddress: "@" 
+        }
     };
 });
