@@ -181,23 +181,30 @@ myApp.directive("searchResults", function() {
             // & is for function
             formattedAddressFunction: "&" 
         },
-        compile: function(elem, attrs) {
+        // compile: function(elem, attrs) {
 
-            console.log('Compiling...');
-            // removes all the classes in the template HTML output
-            elem.removeAttr('class');
-            console.log(elem.html());
+        //     console.log('Compiling...');
+        //     // removes all the classes in the template HTML output
+        //     // elem.removeAttr('class');
+        //     console.log(elem.html());
 
-            return {
-                pre: function(scope, elements, attrs) {
-                    console.log('Pre-linking...');
-                    console.log(elements);
-                },
-                post: function(scope, elements, attrs) {
+        //     return {
+        //         // pre: function(scope, elements, attrs) {
+        //         //     console.log('Pre-linking...');
+        //         //     console.log(elements);
+        //         // },
+        //         post: function(scope, elements, attrs) {
+        //             console.log('Post-linking...');
+        //             console.log(scope);
+        //             console.log(elements);
+        //         }
+        //     };
+        // },
+        link: function(scope, elements, attrs) {
                     console.log('Post-linking...');
+                    console.log(scope);
                     console.log(elements);
-                }
-            };
         }
+                
     };
 });
