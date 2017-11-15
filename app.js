@@ -184,6 +184,8 @@ myApp.directive("searchResults", function() {
         compile: function(elem, attrs) {
 
             console.log('Compiling...');
+            // removes all the classes in the template HTML output
+            elem.removeAttr('class');
             console.log(elem.html());
 
             return {
