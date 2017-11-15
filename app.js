@@ -133,11 +133,14 @@ myApp.controller('secondController', [
 
 myApp.directive("searchResults", function() {
     return {
-        //      atribute      and  element can be used
-        // <div search-results>   <search-results> 
-        restrict: 'AE',
+        // Attribute <div search-results> 
+        // Element  <search-results> 
+        // Class <div class="search-results">
+        // coMment <!-- directive: search-results -->
+        restrict: 'AECM',
         template: '<a href="#" class="list-group-item"><h4 class="list-group-item-heading">Doe, John</h4><p class="list-group-item-text">555 Main St., New York, NY 11111</p></a>',
         // to delete <search-results></search-results> from DOM
+        // and insert just a template
         replace: true
     };
 });
